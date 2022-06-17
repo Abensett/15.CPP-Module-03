@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:57:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:31:29 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 using std::string;
 
-class ClapTrap 
+class ClapTrap
 {
  	public:
 		ClapTrap(void);
@@ -29,7 +29,7 @@ class ClapTrap
 
 		string 	get_name(void) const;
 		void	set_name(string name);
-		void 	attack(const string &target);
+		virtual void 	attack(const string &target);
 		void 	takeDamage(unsigned int amount);
 		void 	beRepaired(unsigned int amount);
 

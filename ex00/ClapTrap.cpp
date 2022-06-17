@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:47:58 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:04:48 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ ClapTrap::ClapTrap(string name) : _name(name), _hit_points(10), _energy_points(1
 }
 // Copy Constructor
 ClapTrap::ClapTrap(const ClapTrap &claptrap) {
+    cout << "ClapTrap " << claptrap._name << " was copied" << endl;
     *this = claptrap;
 }
 // Copy Assignment Operator
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap) {
-    cout << "ClapTrap " << claptrap._name << " was copied" << endl;
+    cout << "ClapTrap " << claptrap._name << " was assigned"<< endl;
 
     if (this != &claptrap) {
         _name = claptrap._name;
@@ -58,15 +59,15 @@ void ClapTrap::attack(const string &target) {
     if (_energy_points && _hit_points) {                                                       // If energy points are greater than 0
         --_energy_points;
         cout << "ClapTrap " << _name << " attacks " << target << ", causing "
-                << _attack_damage << " points of damage!" << endl;      
-    } else {                                                                   // If energy points are 0 
+                << _attack_damage << " points of damage!" << endl;
+    } else {                                                                   // If energy points are 0
         cout << "ClapTrap " << _name << " is either dead or too tired." << endl;
     }
 }
 // Take Damage function
-void ClapTrap::takeDamage(unsigned int amount) {                   
+void ClapTrap::takeDamage(unsigned int amount) {
     if (!_hit_points) {                                                         // If hit points are 0 already dead
-        cout << "ClapTrap " << _name << " is already dead" << endl;         
+        cout << "ClapTrap " << _name << " is already dead" << endl;
     } else {                                                                    // If hit points are greater than 0
         _hit_points -= amount;
 
@@ -81,7 +82,7 @@ void ClapTrap::takeDamage(unsigned int amount) {
     }
 }
 // Be Repaired function
-void ClapTrap::beRepaired(unsigned int amount) {                                
+void ClapTrap::beRepaired(unsigned int amount) {
 
     if (_energy_points && _hit_points) {                                                          //if energy points are greater than 0
         --_energy_points;
@@ -89,9 +90,7 @@ void ClapTrap::beRepaired(unsigned int amount) {
         cout << "ClapTrap " << _name << " repaired " << amount << " HP" << endl;
         cout << "ClapTrap " << _name << " is at " << _hit_points << " HP" << endl;
 
-    } else {          
+    } else {
         cout << "ClapTrap " << _name << " is either dead or too tired." << endl;
     }
-   
-
 }

@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:43:21 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:11:25 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ ScavTrap::ScavTrap(string name) : ClapTrap::ClapTrap(name) {                //in
 }
 
 ScavTrap::ScavTrap(const ScavTrap &scavtrap) {
+    cout << "ScavTrap " << scavtrap._name << " was copied" << endl;
     *this = scavtrap;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap) {
-    cout << "ScavTrap " << scavtrap._name << " was copied" << endl;
+    cout << "ScavTrap " << scavtrap._name << " was assigned" << endl;
 
     if (this != &scavtrap) {
         _name = scavtrap._name;
@@ -83,14 +84,17 @@ void ScavTrap::beRepaired(unsigned int amount) {
 
     if (_energy_points && _hit_points) {
         --_energy_points;
-        _hit_points += amount;
         cout << "ScavTrap " << _name << " healed " << amount << " HP" << endl;
         cout << "ScavTrap " << _name << " is at " << _hit_points << " HP" << endl;
+        _hit_points += amount;
     } else {
         cout << "ScavTrap " << _name << " is dead or too tired." << endl;
     }
 }
 
 void ScavTrap::guardGate(void) const {
-    cout << "ScavTrap " << _name << " is in Gatekeeper Mode" << endl;
+    if (_energy_points && _hit_points)
+        cout << "ScavTrap " << _name << " is in Gatekeeper Mode" << endl;
+    else
+         cout << "ScavTrap " << _name << " is dead or too tired." << endl;
 }

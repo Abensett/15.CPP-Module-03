@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:43:10 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:16:38 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,12 @@ FragTrap::FragTrap(string name) : ClapTrap::ClapTrap(name) {                //in
 }
 
 FragTrap::FragTrap(const FragTrap &FragTrap) {
+    cout << "FragTrap " << FragTrap._name << " was copied" << endl;
     *this = FragTrap;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &FragTrap) {
-    cout << "FragTrap " << FragTrap._name << " was copied" << endl;
+    cout << "FragTrap " << FragTrap._name << " was assigned" << endl;
 
     if (this != &FragTrap) {
         _name = FragTrap._name;
@@ -92,5 +93,8 @@ void FragTrap::beRepaired(unsigned int amount) {
 }
 
 void FragTrap::highFivesGuys(void) const {
-    cout << "FragTrap " << _name << " is asking for HighFive." << endl;
+     if (_energy_points && _hit_points)
+        cout << "FragTrap " << _name << " is asking for HighFive." << endl;
+     else
+         cout << "FragTrap " << _name << " is dead or too tired." << endl;
 }

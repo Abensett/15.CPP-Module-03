@@ -6,13 +6,13 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:13 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 03:06:51 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:18:38 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
-int main(void) 
+int main(void)
 {
 		FragTrap A = FragTrap("Archer");
 		FragTrap B = FragTrap("Berserker");
@@ -27,6 +27,7 @@ int main(void)
 		A.takeDamage(10);
 		A.beRepaired(5);
 		A.attack(B.get_name());
+		C.highFivesGuys();
 
 	//	for (int i = 0; i < 100; i ++)
 	//		B.attack(A.get_name());

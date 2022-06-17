@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:21:44 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/17 20:02:13 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 using std::string;
 
-class ClapTrap 
+class ClapTrap
 {
  	public:
 		ClapTrap(void);
@@ -33,7 +33,7 @@ class ClapTrap
 		void 	takeDamage(unsigned int amount);
 		void 	beRepaired(unsigned int amount);
 
- protected:										// protected because we want to use them in derived classes avec l'heritage
+protected:										// protected because we want to use them in derived classes avec l'heritage
     string _name;
     int 	_hit_points;
     int 	_energy_points;

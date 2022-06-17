@@ -51,13 +51,13 @@ DIROBJS	= $(addprefix $(DIROBJ), $(OBJ))
 
 all: 	$(NAME)
 
-$(DIROBJ)%.o:./%.c
-			mkdir -p $(DIROBJ)
-			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+$(DIROBJ)%.o:./%.cpp
+			@mkdir -p $(DIROBJ)
+			@$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME):
+$(NAME):	$(DIROBJS)
 			@printf "\033[2K\r $(_YELLOW)Compiling $< $(_END)⌛"
-			@$(CC) $(CFLAGS) $(SRC) $(INCLUDES)  $(LDFLAGS) -o $@
+			@$(CC) $(CFLAGS) $(DIROBJS) $(INCLUDES)  $(LDFLAGS) -o $@
 			@printf "\n[$(GREEN)OK$(WHITE)] $(NAME) generated \n"
 
 

@@ -19,8 +19,12 @@ DiamondTrap::DiamondTrap(void) : ClapTrap() {
     cout <<  "DiamondTrap constructor was called." << endl;
 }
 
-DiamondTrap::DiamondTrap(string name) : ClapTrap(name) {                //inherits from ClapTrap constructor differentl initialisation
-
+DiamondTrap::DiamondTrap(string name) {                //inherits from ClapTrap constructor differentl initialisation
+    ClapTrap::_name = name + "_clap_name";
+    _name = name;
+    _hit_points = FragTrap::_hit_points;
+    _energy_points  = ScavTrap::_hit_points;
+    _attack_damage = FragTrap::_attack_damage;
     cout << "DiamondTrap " << _name << " was constructed" << endl;
 }
 
@@ -51,13 +55,7 @@ void DiamondTrap::set_name(string name) {
 }
 
 void DiamondTrap::attack(const string &target) {
-    if (_energy_points && _hit_points) {
-        --_energy_points;
-        cout << "DiamondTrap " << _name << " attacks " << target << ", causing "
-                << _attack_damage << " points of damage!" << endl;
-    } else {
-        cout << "DiamondTrap " << _name << " is dead or too tired." << endl;
-    }
+    ScavTrap::attack (target);
 }
 
 void DiamondTrap::takeDamage(unsigned int amount) {
