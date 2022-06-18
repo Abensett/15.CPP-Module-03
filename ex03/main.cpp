@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:13 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/17 20:28:49 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/18 17:16:05 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int main(void)
 		A.takeDamage(10);
 		A.beRepaired(5);
 		A.attack(B.get_name());
+		C.highFivesGuys();
+		C.guardGate();
 		C.whoAmI();
 	//	for (int i = 0; i < 100; i ++)
 	//		B.attack(A.get_name());

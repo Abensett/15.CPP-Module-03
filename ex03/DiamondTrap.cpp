@@ -16,6 +16,9 @@ using std::cout;
 using std::endl;
 
 DiamondTrap::DiamondTrap(void) : ClapTrap() {
+    _hit_points = FragTrap::_hit_points;
+    _energy_points  = ScavTrap::_energy_points;
+    _attack_damage = FragTrap::_attack_damage;
     cout <<  "DiamondTrap constructor was called." << endl;
 }
 
@@ -23,7 +26,7 @@ DiamondTrap::DiamondTrap(string name) {                //inherits from ClapTrap 
     ClapTrap::_name = name + "_clap_name";
     _name = name;
     _hit_points = FragTrap::_hit_points;
-    _energy_points  = ScavTrap::_hit_points;
+    _energy_points  = ScavTrap::_energy_points;
     _attack_damage = FragTrap::_attack_damage;
     cout << "DiamondTrap " << _name << " was constructed" << endl;
 }

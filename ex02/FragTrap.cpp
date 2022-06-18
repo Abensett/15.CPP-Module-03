@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/17 20:16:38 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:55:14 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@ using std::endl;
 
 FragTrap::FragTrap(void) : ClapTrap::ClapTrap() {
     cout <<  "FragTrap constructor was called." << endl;
+    _hit_points = 100;
+    _energy_points = 100;
+    _attack_damage = 30;
 }
 
 FragTrap::FragTrap(string name) : ClapTrap::ClapTrap(name) {                //inherits from ClapTrap constructor differentl initialisation

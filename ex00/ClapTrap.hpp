@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:12:15 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/16 02:02:26 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:49:45 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,12 @@
 
 using std::string;
 
-class ClapTrap 
+class ClapTrap
 {
  	public:
 		ClapTrap(void);
 		~ClapTrap(void);
-		explicit ClapTrap(string name);
+		explicit ClapTrap(string name);							// explicit retire la propriete de conversion d'un constructeur
 		ClapTrap(const ClapTrap &claptrap);
 		ClapTrap &operator=(const ClapTrap &claptrap);
 

@@ -6,7 +6,7 @@
 /*   By: abensett <abensett@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/28 04:10:35 by abensett          #+#    #+#             */
-/*   Updated: 2022/06/17 20:11:25 by abensett         ###   ########.fr       */
+/*   Updated: 2022/06/18 16:53:45 by abensett         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ using std::cout;
 using std::endl;
 
 ScavTrap::ScavTrap(void) : ClapTrap::ClapTrap() {
+    _hit_points = 100;
+    _energy_points = 50;
+    _attack_damage = 20;
     cout <<  "ScavTrap constructor was called." << endl;
 }
 
